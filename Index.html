@@ -18,6 +18,15 @@
     <h1>Picturesque</h1>
     <p><strong>Create and share pictures that makes you and us happy.</strong></p>
 
+    <nav>
+            <ul>
+                <li class="active"><a href="index.html">Timeline</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Other</a></li>
+            </ul>
+        </nav>
+
         </div>
     <div>
 
@@ -31,14 +40,28 @@
 <main id=main>
     
 <form>
+        <fieldset>
 
+                <legend>User's Details</legend>
     First Name: <input type="text"/>
     Last Name: <input type="text"/>
     Email: <input type="email"/>
     Password: <input type="password"/>
     <input type="submit" value="submit"></input>
-    <input type="checkbox"/>
     
+   
+           
+            <p>
+               <label>Country</label>
+               <select id = "myList">
+                 <option value = "1">Slovakia</option>
+                 <option value = "2">Czech</option>
+                 <option value = "3">Russia</option>
+                 <option value = "4">USA</option>
+               </select>
+            </p>
+         </fieldset>
+
     </form>
 
 </main>
