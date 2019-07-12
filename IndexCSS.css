@@ -36,3 +36,8 @@ header{
     flex: 1;
 }
 
+fieldset {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
