@@ -42,15 +42,12 @@
 <form>
         <fieldset>
 
-                <legend>User's Details</legend>
+                <legend>New User's Details</legend>
     First Name: <input type="text"/>
     Last Name: <input type="text"/>
     Email: <input type="email"/>
     Password: <input type="password"/>
     Date of birth: <input type="date"/>
-    <input type="submit" value="submit"></input>
-    
-   
            
             <p>
                <label>Country</label>
@@ -61,8 +58,28 @@
                  <option value = "4">USA</option>
                </select>
             </p>
+            <input type="submit" value="submit"></input>
          </fieldset>
 
+         <fieldset>
+
+            <legend>New Post</legend>
+Author: <input type="text"/>
+Title: <input type="text"/>
+Content: <input type="email"/>
+
+<p>
+           <label>Category</label>
+           <select id = "type of post">
+             <option value = "1">Picture</option>
+             <option value = "2">Video</option>
+             <option value = "3">Story</option>
+           </select>
+        </p>
+
+        <input type="submit" value="submit"></input>
+
+     </fieldset>
     </form>
 
 </main>
@@ -79,6 +96,8 @@
         <div>
             <textarea>Comment</textarea>   
         </div>
+   
+    
     </div>
 
     <div class="container-item">
@@ -88,6 +107,7 @@
             <div>
                 <textarea>Comment</textarea>   
             </div>
+       
         </div>
 
         <div class="container-item">
