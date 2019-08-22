@@ -1,0 +1,27 @@
+.todos {
+  margin: 0 -10px;
+}
+
+.todo {
+  width: 350px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.topBorderGreen {
+  border-top-width: medium;
+  border-top-color: green;
+
+}
+
+.topBorderRed {
+  border-top-width: medium;
+  border-top-color: red;
+
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
