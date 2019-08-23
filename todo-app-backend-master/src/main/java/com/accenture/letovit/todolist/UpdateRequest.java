@@ -6,6 +6,7 @@ package com.accenture.letovit.todolist;
  */
 public class UpdateRequest {
 	private boolean finished;
+	private String finishedAt;
 
 	public boolean isFinished() {
 		return finished;
@@ -13,6 +14,14 @@ public class UpdateRequest {
 
 	public void setFinished(boolean finished) {
 		this.finished = finished;
+	}
+
+	public String getFinishedAt() {
+		return finishedAt;
+	}
+
+	public void setFinishedAt(String finishedAt) {
+		this.finishedAt = finishedAt;
 	}
 	
 	

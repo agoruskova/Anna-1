@@ -20,6 +20,9 @@
 
 }
 
+.hideBadge {
+  visibility: hidden;
+}
 .close {
   position: absolute;
   top: 0;

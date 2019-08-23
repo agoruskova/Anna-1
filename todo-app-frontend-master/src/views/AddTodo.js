@@ -4,7 +4,8 @@ import { withRouter } from "react-router-dom";
 class AddTodo extends Component {
   state = {
     title: "",
-    text: ""
+    text: "",
+    deadline: ""
   };
 
   handleSubmit = async event => {
@@ -25,7 +26,7 @@ class AddTodo extends Component {
   };
 
   render() {
-    const { title, text } = this.state;
+    const { title, text, deadline } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -44,6 +45,15 @@ class AddTodo extends Component {
           onChange={this.handleChange}
           className="form-control mb-2"
           placeholder="Text"
+        />
+         <input
+          name="deadline"
+          type="datetime-local"
+          value={deadline}
+          onChange={this.handleChange}
+          className="form-control mb-2"
+          placeholder="Deadline"
+          required
         />
 
         <button

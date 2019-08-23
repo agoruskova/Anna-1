@@ -26,7 +26,8 @@ class App extends Component {
     const newTodo = {
       ...todo,
       finished: false,
-      createdAt: moment().format()
+      createdAt: moment().format(),
+      deadline: moment(todo.deadline).format()
     };
     const result = await axios.post("/todos", newTodo);
     newTodo.id = result.data;
@@ -58,6 +59,13 @@ class App extends Component {
 
   render() {
     const todos = this.state.todos;
+
+    const filteredArray1 = todos.filter((todo) => {return todo.finished === false})
+    const filteredArray2 = todos.filter((todo) => {return todo.finished === true})
+    filteredArray1.sort((a,b) => {return moment(b.createdAt).diff(moment(a.createdAt))});
+    filteredArray2.sort((a,b) => {return moment(b.createdAt).diff(moment(a.createdAt))});
+    const correctToDoList = filteredArray1.concat(filteredArray2)
+
     return (
       <HashRouter>
         <div className="App">
@@ -70,7 +78,7 @@ class App extends Component {
               exact
               render={() => (
                 <TodoList
-                  todos={todos}
+                  todos={correctToDoList}
                   onEdit={this.editTodo}
                   onRemove={this.removeTodo}
                 />

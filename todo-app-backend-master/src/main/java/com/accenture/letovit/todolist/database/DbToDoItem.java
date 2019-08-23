@@ -21,6 +21,10 @@ public class DbToDoItem {
 	private boolean finished;
 
 	private String createdAt;
+	
+	private String finishedAt;
+	
+	private String deadline;
 
 	public String getIdentifier() {
 		return identifier;
@@ -62,4 +66,20 @@ public class DbToDoItem {
 		this.createdAt = createdAt;
 	}
 
+	public String getFinishedAt() {
+		return finishedAt;
+	}
+
+	public void setFinishedAt(String finishedAt) {
+		this.finishedAt = finishedAt;
+	}
+
+	public String getDeadline() {
+		return deadline;
+	}
+
+	public void setDeadline(String deadline) {
+		this.deadline = deadline;
+	}
+	
 }

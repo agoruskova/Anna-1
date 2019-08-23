@@ -18,7 +18,8 @@ class Todo extends Component {
 
   handleFinish = async () => {
     await axios.patch("/todos/" + this.props.todo.id, {
-      finished: true
+      finished: true,
+      finishedAt: moment().format()
     });
     this.props.onFinish();
   };
@@ -29,7 +30,7 @@ class Todo extends Component {
   };
 
   render() {
-    const { createdAt, title, finished } = this.props.todo;
+    const { createdAt, finishedAt, deadline, title, finished } = this.props.todo;
     let classes = "card";
     if (finished) classes += " topBorderGreen"
     else classes += " topBorderRed";
@@ -47,11 +48,20 @@ var b = moment(createdAt);
       <div className="todo mb-2">
         <div className={classes}>
           <div className="card-body">
-            <h5 className="card-title">{title} <span className={ showBadge ? "badge badge-secondary" : null}>New</span></h5>
+            <h5 className="card-title">{title} <span className={ showBadge ? "badge badge-secondary" : "hideBadge"}>New</span></h5>
             <h6 className="card-subtitle text-muted mb-2">
               Created at {moment(createdAt).format('HH:mm:ss YYYY-MM-DD')}
             </h6>
+            { (finished) && (
+            <h6 className="card-subtitle text-muted mb-2">
+              Finished at {moment(finishedAt).format('HH:mm:ss YYYY-MM-DD')}
+            </h6>
+            )}
             {this.renderText()}
+            <br></br>
+            <h6 className="card-subtitle text-muted mb-2">
+              Deadline at { deadline != null ? moment(deadline).format('HH:mm:ss YYYY-MM-DD') : "N/A"}
+            </h6>
             <TodoButtons
               todo={this.props.todo}
               onFinish={this.handleFinish}

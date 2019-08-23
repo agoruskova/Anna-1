@@ -109,6 +109,9 @@ public class ToDoListController {
 		// set single todo item to finished and save the change to DB
 		DbToDoItem dbToDoItem = repository.findById(identifier).get();
 		dbToDoItem.setFinished(requestBody.isFinished());
+		if (requestBody.isFinished()) {
+			dbToDoItem.setFinishedAt(requestBody.getFinishedAt());
+		}
 		repository.save(dbToDoItem);
 	}
 }
