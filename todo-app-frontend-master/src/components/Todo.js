@@ -33,15 +33,21 @@ class Todo extends Component {
     const { createdAt, finishedAt, deadline, title, finished } = this.props.todo;
     let classes = "card";
     if (finished) classes += " topBorderGreen"
-    else classes += " topBorderRed";
-
-
+    else if (moment(deadline).isBefore(moment().format())) classes += " wholeBorderRed"
+    else classes += " topBorderRed"
     
       var a = moment();
-var b = moment(createdAt);
+      var b = moment(createdAt);
       const showBadge = a.diff(b, 'minutes') <= 10 ? true : false; 
     
-
+      
+    
+      
+    
+       
+        
+     
+    
 
     return (
       
@@ -49,6 +55,9 @@ var b = moment(createdAt);
         <div className={classes}>
           <div className="card-body">
             <h5 className="card-title">{title} <span className={ showBadge ? "badge badge-secondary" : "hideBadge"}>New</span></h5>
+           
+            <a href="mailto:?subject=+document.getElementById('title').value+">Click me</a>
+            
             <h6 className="card-subtitle text-muted mb-2">
               Created at {moment(createdAt).format('HH:mm:ss YYYY-MM-DD')}
             </h6>
